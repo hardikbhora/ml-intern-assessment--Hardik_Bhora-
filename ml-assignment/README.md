@@ -1,11 +1,30 @@
-# Trigram Language Model
+# Trigram Language Model – Instructions
 
-This directory contains the core assignment files for the Trigram Language Model.
+## 1. Install dependencies
+Run inside the project folder:
+pip install -r requirements.txt
 
-## How to Run 
+## 2. Run tests
+pytest tests/test_ngram.py
 
-    # Instructions on how to run. (filled by you)
+## 3. Project Structure
+ml-assignment/
+├── src/
+│   └── ngram_model.py
+├── tests/
+│   └── test_ngram.py
+├── evaluation.md
+└── data/
 
-## Design Choices
+## 4. What the model does
+- Cleans input text
+- Builds trigram counts
+- Uses probabilistic sampling to generate text
+- Handles empty/short inputs
+- Passes the provided tests
 
-Please document your design choices in the `evaluation.md` file. This should be a 1-page summary of the decisions you made and why you made them.
+## 5. Example usage
+from src.ngram_model import TrigramModel
+model = TrigramModel()
+model.fit("I am a test sentence.")
+print(model.generate())
